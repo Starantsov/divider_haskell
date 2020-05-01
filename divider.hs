@@ -6,7 +6,7 @@ divide x y = do
     if y /= 0 
         then do
             let (result, remains) = makeDivision (abs x) (abs y) 0
-            (result * sign, remains)
+            (result * sign, remains * sign)
         else (0, 0)
     where makeDivision x y c = if x >= y then makeDivision (x - y) y (c + 1) else (c, x)
 
